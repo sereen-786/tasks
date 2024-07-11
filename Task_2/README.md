@@ -1,4 +1,4 @@
-# Task 1 Front End Automation
+# Task 2: Front End Automation
 
 ## Contents
 
