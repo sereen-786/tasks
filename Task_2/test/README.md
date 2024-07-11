@@ -197,6 +197,10 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 8. We can run single test cases from the file using --include or -i where the tag values are given from test case [tags] section
    - robot --outputdir results/ -i scenario1 verify_titles_and_job_counts.robot --> runs only the first tc from the test case file 'verify_titles_and_job_count.robot
 
+9. Check the results/report.html for detailed view of test testcases and durations.
+   ![image](https://github.com/sereen-786/tasks/assets/82365795/434a97de-9a73-46ed-8426-d25d90f919ef)
+
+
 
 
 
