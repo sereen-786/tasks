@@ -67,11 +67,11 @@ tasks
     ```bash
     winget install k6 --source winget
     ```
-  - If you use the Chocolatey package manager you can install the unofficial k6 package with:
+   - If you use the Chocolatey package manager you can install the unofficial k6 package with:
     ```bash
     choco install k6
     ```
-  - Alternatively, you can download and run the [latest official installer](https://dl.k6.io/msi/k6-latest-amd64.msi).
+   - Alternatively, you can download and run the [latest official installer](https://dl.k6.io/msi/k6-latest-amd64.msi).
 
 2. Similarlly, check for mac and linux installation here [Mac and Linux installation here](https://k6.io/docs/get-started/installation/#linux)
 
