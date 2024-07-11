@@ -91,7 +91,7 @@ pip install robotframework-seleniumlibrary
 
 ## 5. Execution of test cases
 
-1. Open the git bash or cmd promt
+1. Open the git bash or cmd prompt
 
 2. Create a folder and clone the repo or download the repo
 ```bash
@@ -118,7 +118,7 @@ $ cd tasks/Task_2/test
 ```
 5. Now run the below command to run the test cases and check the execution
 ```bash
-$ robot --outputdir results/ verify_titles_and_job_counts.robot                      ---> without passing variable
+$ robot --outputdir results/ verify_titles_and_job_counts.robot                      ---> without passing variable, default takes chrome
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -139,7 +139,7 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
-$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot          ---> without passing variable for chrome browser to run on
+$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot          ---> with passing variable for chrome browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -160,7 +160,7 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                       
-$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> without passing variable for chrome browser to run on
+$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> with passing variable for chrome browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
