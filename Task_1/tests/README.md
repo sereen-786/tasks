@@ -64,7 +64,7 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Test script path_ : tasks/Task_1/tests/errorHandling.js
 - _Expected results_ :
   - status code '422 Validation failed'
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
   █ scenario 2: Check Different Error Input Handlings For Github API
   
@@ -83,7 +83,7 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Test script path_ : tasks/Task_1/tests/errorHandling.js
 - _Expected results_ :
   - status code '404 Not Found'
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
   █ scenario 2: Check Different Error Input Handlings For Github API
   
@@ -102,7 +102,7 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Test script path_ : tasks/Task_1/tests/errorHandling.js
 - _Expected results_ :
   - status code '400 Bad Request'
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
   █ scenario 2: Check Different Error Input Handlings For Github API
 
@@ -124,7 +124,7 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Expected results_ :
   - status code '200' OK
   - check the multiple user requests is success
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
    █ scenario 3: Check For Multiple User Performance For Github API
 
