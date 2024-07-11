@@ -52,9 +52,12 @@ tasks
 2. Creation of account you can check link and proceed with the account creation [Github account creation](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account)
 3. If account is already present then skip the above 2 steps.
 4. Now generate the TOKEN to authenticate using github api required for running test case.
-5. Check the steps here to generate TOKEN [Generate github token](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-   ![image](https://github.com/sereen-786/tasks/assets/82365795/f3238845-2fdd-46f6-8f68-21706b111e45)
-6. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
+5. Check the steps here to generate TOKEN [Generate github token](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and follow this youtube link to create a token [Generate Token video](https://www.google.com/search?q=how+to+generate+token+in+github+youtube&sca_esv=3998ef5806fd06a1&rlz=1C1SQJL_enIN932IN932&sxsrf=ADLYWIJq-CZU59XnkKrUPgGKiAHA1f7hvQ%3A1720712224611&ei=IPyPZsD-JOmPseMPkLel6AQ&ved=0ahUKEwjAjqLHqJ-HAxXpR2wGHZBbCU0Q4dUDCA8&uact=5&oq=how+to+generate+token+in+github+youtube&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ2hvdyB0byBnZW5lcmF0ZSB0b2tlbiBpbiBnaXRodWIgeW91dHViZTIFECEYoAEyBRAhGKABMgUQIRifBUiCG1CZAli9GHABeAGQAQCYAZQCoAHjD6oBAzItOLgBA8gBAPgBAZgCCaACqhDCAgoQABiwAxjWBBhHwgIFEAAYgATCAgYQABgWGB7CAggQABgWGAoYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgcQIRigARgKwgIEECEYFZgDAIgGAZAGCJIHBTEuMC44oAe3KA&sclient=gws-wiz-serp#fpstate=ive&vld=cid:a06ab2f2,vid:FugonDV6RdE,st:39)
+
+   ![image](https://github.com/sereen-786/tasks/assets/82365795/13da32a7-e457-4a2b-a8c1-dcb313643d4d)
+
+   
+7. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
 
 ## 5. Installation of K6 tool
 
@@ -128,8 +131,8 @@ tasks
      ```bash
      $ k6 run -e MY_HOSTNAME=test.k6.io script.js
      ```
-   6. After running the k6 tests
-      ```bash
+6. After running the k6 tests
+   ```bash
       rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_1 (main)
       $ k6 run -e TOKEN=<your_generated_token_from_github> -e USERNAME=<github_username> main.js
 
@@ -219,9 +222,17 @@ tasks
       scenario2 ✓ [====================] 1 VUs      0m01.6s/5m0s  1/1 iters, 1 per VU
       scenario3 ✓ [====================] 00/10 VUs  15s
 
-      ```
-    7. A result.html file will be created it the same location, you can open the file in browser and check different checks and thersholds and time durations
-       - In below image you will see different thershold points and here 4 requests are failed because its part of negative error input scenarios that we are running and all the test cases scenarios have passed.
+   ```
+
+7. Check a new result.html file will be created for storing the results
+   ```bash
+   rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_1 (main)
+   $ ls
+   README.md  common/  main.js  result.html  tests/          --> new file created
+   ```
+
+9. A result.html file will be created it the same location, you can open the file in browser and check different checks and thersholds and time durations
+   - In below image you will see different thershold points and here 4 requests are failed because its part of negative error input scenarios that we are running and all the test cases scenarios have passed.
        ![image](https://github.com/sereen-786/tasks/assets/82365795/a641a611-d1c3-4b07-9ba0-dc05011d7913)
        
 
