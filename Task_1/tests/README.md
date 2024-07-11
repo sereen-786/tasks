@@ -8,7 +8,7 @@ This repository contains automated test cases for the github API using K6 perfor
 
 ### Scenario 1: To Check Github User Authentication And Data Validation (positive scenarios)
 
-- _Test Case ID_ : 1.1
+> **_Test Case ID_**: 1.1
 - _Description_ : Automate the github user authentication with valid token to create the repo for user data validation and then delete the repo created.
 - _Pre - Condition_ : Have a valid username and token generated from your github account.
 - _Test steps_:
@@ -36,7 +36,7 @@ This repository contains automated test cases for the github API using K6 perfor
 
 ### Scenario 2: Check Different Error Input Handlings For Github API (negative scenarios)
 
-- _Test Case ID_ : 2.1
+> **_Test Case ID_** : 2.1
 - _Description_ : Automate to verify the github unauthorized access when valid user and invalid token is provided.
 - _Pre - Condition_ : Be a user in github
 - _Test steps_ :
@@ -55,7 +55,7 @@ This repository contains automated test cases for the github API using K6 perfor
       ✓ Expected response contains "Bad credentials" for unauthorized access
   ```
 
-- _Test Case ID_ : 2.2
+> **_Test Case ID_** : 2.2
 - _Description_ : Automate to verify github post request for creation of repo with empty/missing input fields with valid user.
 - _Pre - Condition_ : Have a valid username and token generated from your github account.
 - _Test steps_ :
@@ -74,7 +74,7 @@ This repository contains automated test cases for the github API using K6 perfor
       ✓ Expected response contains "Missing feild" missing input field payload
   ```
 
-- _Test Case ID_ : 2.3
+> **_Test Case ID_** : 2.3
 - _Description_ : Automate to verify invalid endpoint response for github api with valid user.
 - _Pre - Condition_ : Have a valid username and token generated from your github account.
 - _Test steps_ :
@@ -93,7 +93,7 @@ This repository contains automated test cases for the github API using K6 perfor
       ✓ Expected response contains "Not Found" for invalid endpoint 
   ```
 
-- _Test Case ID_ : 2.4
+> **_Test Case ID_** : 2.4
 - _Description_ : Automate to verify github repo creation with invalid/Unsupported payload wih valid user.
 - _Pre - Condition_ : Have a valid username and token generated from your github account.
 - _Test steps_ :
@@ -114,7 +114,7 @@ This repository contains automated test cases for the github API using K6 perfor
 
 ### Scenario 3: Check For Multiple User Performance For Github API (load testing)
 
-- _Test Case ID_ : 2.1
+> **_Test Case ID_** : 3.1
 - _Description_ : Automate to verify load testing when a certain users hit the get list of user repo requests simultaneously with ramp-up, steady and ramp down.
 - _Pre - Condition_ : Have a valid username and token generated from your github account.
 - _Test steps_ :
