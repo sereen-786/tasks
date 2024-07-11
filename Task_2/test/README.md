@@ -122,7 +122,7 @@ $ robot --outputdir results/ verify_titles_and_job_counts.robot                 
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
-Scenario 1: Verify And Capture Titles Of All Search Results From C... | PASS |
+Scenario 1: Verify And Capture Titles Of All Search Results From C... | PASS |       ---> test case title
 ------------------------------------------------------------------------------
 Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is... Total job count from search filter for Bangalore(_) 2
 Total job count from right side of the results 2
@@ -174,7 +174,7 @@ Both the job count values are matching successfully 2==2
 Verify Titles And Job Counts                                          | PASS |
 2 tests, 2 passed, 0 failed
 ==============================================================================
-Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
+Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml          ---> results are on these path
 Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
 Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 ```
