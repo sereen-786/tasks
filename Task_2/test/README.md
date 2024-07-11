@@ -188,7 +188,7 @@ Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml         
 Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
 Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 ```
-6. Check the reports in results folder containing output.xml, log.html, report.html for detailed code breaks
+6. Check the reports in results folder containing output.xml, log.html, report.html for detailed code breaks, time of execution, pass or fail etc.
 7. Lets see what the command is all about:  robot --variable BROWSER:Chrome ---outputdir results/ verify_titles_and_job_counts.robot.
    - --variable : Here you can pass any agrument values through CLI during the run, that is declared in test case file under *** Variables *** section. For example pass --variable BROWSER:Chrome or Edge or any other browser (Keep in mind to download and add the drivers into system env path)
    - --outputdir : Its the path to store all the results after run.
