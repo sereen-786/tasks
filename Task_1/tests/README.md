@@ -20,12 +20,18 @@ This repository contains automated test cases for the github API using K6 perfor
   - status code is '200' OK
   - Repo is created with '201' details (e.g, user_name, description, repo_name)
   - Delete is success '204'
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
+   █ scenario 1: Check Github User Authentication And Data Validation
 
+    █ Verify the github user authentication with data validation
 
-
-  
+      ✓ Authentication status is 200
+      ✓ Authenticated user name correct (login: Rithik-codes)
+      ✓ Create repo status is 201
+      ✓ Repo name created is correct (name: test-repo)
+      ✓ Repo description is correct
+      ✓ Delete created repo status is 204
   ```
 
 ### Scenario 2: Check Different Error Input Handlings For Github API (negative scenarios)
@@ -39,12 +45,14 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Test script path_ : tasks/Task_1/tests/errorHandling.js
 - _Expected results_ :
   - status code '401' unathorized
-- _Automation results_ :
+- _Automation results_ : PASS
   ```bash
+  █ scenario 2: Check Different Error Input Handlings For Github API
 
+    █ Verify the github unauthorized access - Invalid token
 
-
-  
+      ✓ Expected unauthorized status is 401 for unauthorized access
+      ✓ Expected response contains "Bad credentials" for unauthorized access
   ```
 
 - _Test Case ID_ : 2.2
@@ -58,10 +66,12 @@ This repository contains automated test cases for the github API using K6 perfor
   - status code '422 Validation failed'
 - _Automation results_ :
   ```bash
-
-
-
+  █ scenario 2: Check Different Error Input Handlings For Github API
   
+    █ Verify github post request for creation of repo with empty/missing input fields
+
+      ✓ Expected 422 for missing input field payload
+      ✓ Expected response contains "Missing feild" missing input field payload
   ```
 
 - _Test Case ID_ : 2.3
@@ -75,10 +85,12 @@ This repository contains automated test cases for the github API using K6 perfor
   - status code '404 Not Found'
 - _Automation results_ :
   ```bash
-
-
-
+  █ scenario 2: Check Different Error Input Handlings For Github API
   
+     █ Verify invalid endpoint response for github api
+
+      ✓ Expected 404 Not Found when accessing invalid path "/invalid_endpoint"
+      ✓ Expected response contains "Not Found" for invalid endpoint 
   ```
 
 - _Test Case ID_ : 2.4
@@ -92,10 +104,12 @@ This repository contains automated test cases for the github API using K6 perfor
   - status code '400 Bad Request'
 - _Automation results_ :
   ```bash
+  █ scenario 2: Check Different Error Input Handlings For Github API
 
+    █ Verify github repo creation with invalid/Unsupported payload
 
-
-  
+      ✓ Expected 400 for invalid payload
+      ✓ Expected response contains "Bad Request" for invalid payload
   ```
 
 ### Scenario 3: Check For Multiple User Performance For Github API (load testing)
@@ -106,15 +120,14 @@ This repository contains automated test cases for the github API using K6 perfor
 - _Test steps_ :
   - Set some ramp-up of gradually increasing to 10 users for 5s, then stay at 10 users for 5s and ramp-down to 0 users over 5s.
   - Check the response to be 200
-- _Test script path_ : tasks/Task_1/tests/errorHandling.js
+- _Test script path_ : tasks/Task_1/tests/multiUser.js
 - _Expected results_ :
   - status code '200' OK
   - check the multiple user requests is success
 - _Automation results_ :
   ```bash
+   █ scenario 3: Check For Multiple User Performance For Github API
 
-
-
-  
+    ✓ Fetch repositories for valid user status is 200  
   ```
   
