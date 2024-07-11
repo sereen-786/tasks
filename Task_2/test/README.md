@@ -91,7 +91,94 @@ pip install robotframework-seleniumlibrary
 
 ## 5. Execution of test cases
 
-1. Open the 
+1. Open the git bash or cmd promt
+2. Create a folder and clone the repo or download the repo
+```bash
+rithi@Workstation MINGW64 ~/dummy_test
+$ git clone https://github.com/sereen-786/tasks.git
+Cloning into 'tasks'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (107/107), done.
+remote: Compressing objects: 100% (85/85), done.
+remote: Total 107 (delta 35), reused 11 (delta 0), pack-reused 0
+Receiving objects: 100% (107/107), 119.31 KiB | 744.00 KiB/s, done.
+Resolving deltas: 100% (35/35), done.
+```
+3. Check if the directory is present
+```bash
+rithi@Workstation MINGW64 ~/dummy_test
+$ ls
+tasks/
+```
+4. Go into the Tast_2 folder
+```bash
+rithi@Workstation MINGW64 ~/dummy_test
+$ cd tasks/Task_2/test
+```
+5. Now run the below command to run the test cases and check the execution
+```bash
+$ robot --outputdir results/ verify_titles_and_job_counts.robot
+==============================================================================
+Verify Titles And Job Counts
+==============================================================================
+Scenario 1: Verify And Capture Titles Of All Search Results From C... | PASS |
+------------------------------------------------------------------------------
+Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is... Total job count from search filter for Bangalore(_) 2
+Total job count from right side of the results 2
+Both the job count values are matching successfully 2==2
+| PASS |
+------------------------------------------------------------------------------
+Verify Titles And Job Counts                                          | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
+Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
+Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
+
+rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
+$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot
+==============================================================================
+Verify Titles And Job Counts
+==============================================================================
+Scenario 1: Verify And Capture Titles Of All Search Results From C... | PASS |
+------------------------------------------------------------------------------
+Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is... Total job count from search filter for Bangalore(_) 2
+Total job count from right side of the results 2
+Both the job count values are matching successfully 2==2
+| PASS |
+------------------------------------------------------------------------------
+Verify Titles And Job Counts                                          | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
+Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
+Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
+
+rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
+$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot
+==============================================================================
+Verify Titles And Job Counts
+==============================================================================
+Scenario 1: Verify And Capture Titles Of All Search Results From C... | PASS |
+------------------------------------------------------------------------------
+Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is... Total job count from search filter for Bangalore(_) 2
+Total job count from right side of the results 2
+Both the job count values are matching successfully 2==2
+| PASS |
+------------------------------------------------------------------------------
+Verify Titles And Job Counts                                          | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
+Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
+Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
+```
+6. Check the reports in results folder containing output.xml, log.html, report.html for detailed code breaks
+7. Lets see what the command is all about:  robot --variable BROWSER:Chrome ---outputdir results/ verify_titles_and_job_counts.robot.
+   - --variable : Here you can pass any agrument values through CLI during the run, that is declared in test case file under *** Variables *** section. For example pass --variable BROWSER:Chrome or Edge or any other browser (Keep in mind to download and add the drivers into system env path)
+   - --outputdir : Its the path to store all the results after run.
+8. We can run single test cases from the file using --include or -i where the tag values are given from test case [tags] section
+   - robot --outputdir results/ -i scenario1 verify_titles_and_job_counts.robot --> runs only the first tc from the test case file 'verify_titles_and_job_count.robot
 
 
 
