@@ -170,7 +170,7 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                       
-$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> with passing variable for chrome browser to run on
+$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> with passing variable for edge browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
