@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-11T13:25:46.703519" rpa="false" schemaversion="5">
+<suite id="s1" name="Verify Titles And Job Counts" source="C:\Users\zmokser\Downloads\selenium_project\test\verify_titles_and_job_counts.robot">
+<test id="s1-t1" name="Scenario 1: Verify And Capture Titles Of All Search Results From Clarivate First Page To a Text File" line="38">
+<kw name="Remove File" owner="OperatingSystem" type="SETUP">
+<msg time="2024-07-11T13:25:47.047697" level="INFO" html="true">File '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;' does not exist.</msg>
+<arg>${TITLES_FILE}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2024-07-11T13:25:47.047697" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Google Search Results">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:47.047697" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/?hl=en'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T13:25:47.047697" elapsed="8.648874"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.696571" elapsed="0.030529"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[@id="S3BnEe"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.727100" elapsed="0.028446"/>
+</kw>
+<msg time="2024-07-11T13:25:55.755546" level="INFO">${google_popup_status} = True</msg>
+<var>${google_popup_status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://*[@id="S3BnEe"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.727100" elapsed="0.028446"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:55.755546" level="INFO">Clicking element 'xpath://*[@id="L2AGLb"]/div'.</msg>
+<arg>xpath://*[@id="L2AGLb"]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.755546" elapsed="0.069176"/>
+</kw>
+<arg>${google_popup_status}</arg>
+<arg>Click Element</arg>
+<arg>xpath://*[@id="L2AGLb"]/div</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.755546" elapsed="0.069176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://img[@alt='Google']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.825723" elapsed="0.020002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:55.846721" level="INFO">Typing text 'Clarivate Analytics' into text field 'name:q'.</msg>
+<arg>name:q</arg>
+<arg>Clarivate Analytics</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.846721" elapsed="0.150282"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:btnK</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:25:55.997003" elapsed="0.232665"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:56.229668" level="INFO">Clicking element 'name:btnK'.</msg>
+<arg>name:btnK</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:56.229668" elapsed="0.906904"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.143575" level="INFO">Page title is 'Clarivate Analytics - Google Search'.</msg>
+<arg>Clarivate Analytics - Google Search</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.137575" elapsed="0.006000"/>
+</kw>
+<arg>5sec</arg>
+<arg>1sec</arg>
+<arg>Title Should Be</arg>
+<arg>Clarivate Analytics - Google Search</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.136572" elapsed="0.007003"/>
+</kw>
+<doc>Verify google search results is success.</doc>
+<status status="PASS" start="2024-07-11T13:25:47.047697" elapsed="10.095878"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.158718" level="INFO">${titles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.80")&gt;, &lt;selenium.webdriv...</msg>
+<var>${titles}</var>
+<arg>xpath://h3</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.144579" elapsed="0.014139"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-07-11T13:25:57.160720" level="INFO">Length is 17.</msg>
+<arg>${titles}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.159720" elapsed="0.001000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.177088" level="INFO">${title_text} = Clarivate - Data, Insights and Analytics for the Innovation ...</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.160720" elapsed="0.016368"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.177088" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.187037" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.177088" elapsed="0.009949"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.80")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.160720" elapsed="0.026317"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.344588" level="INFO">${title_text} = Web of Science</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.188039" elapsed="0.156549"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.344588" elapsed="0.001005"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.347590" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.345593" elapsed="0.001997"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.81")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.188039" elapsed="0.159551"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.396811" level="INFO">${title_text} = Master Journal List</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.348591" elapsed="0.048220"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.397092" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.397092" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.397092" elapsed="0.000000"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.82")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.348591" elapsed="0.048501"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.426281" level="INFO">${title_text} = About us</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.397092" elapsed="0.029189"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.426281" elapsed="0.000998"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.429517" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.427279" elapsed="0.002238"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.83")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.397092" elapsed="0.032425"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.439515" level="INFO">${title_text} = Careers</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.429517" elapsed="0.009998"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.440590" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.442517" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.440590" elapsed="0.001927"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.84")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.429517" elapsed="0.013000"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.456673" level="INFO">${title_text} = Contact us</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.442517" elapsed="0.014156"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.456673" elapsed="0.001002"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.458673" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.457675" elapsed="0.000998"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.85")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.442517" elapsed="0.016156"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.467674" level="INFO">${title_text} = </msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.459673" elapsed="0.008001"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2024-07-11T13:25:57.468674" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.468674" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2024-07-11T13:25:57.468674" elapsed="0.001000"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.86")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.459673" elapsed="0.010001"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.478514" level="INFO">${title_text} = </msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.469674" elapsed="0.008840"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2024-07-11T13:25:57.479515" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.478514" elapsed="0.001001"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2024-07-11T13:25:57.480516" elapsed="0.000000"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.87")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.469674" elapsed="0.010842"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.489647" level="INFO">${title_text} = </msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.481515" elapsed="0.008132"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2024-07-11T13:25:57.490186" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.490186" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2024-07-11T13:25:57.490186" elapsed="0.000000"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.88")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.481515" elapsed="0.008671"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.499189" level="INFO">${title_text} = </msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.491189" elapsed="0.008000"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2024-07-11T13:25:57.500189" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.499189" elapsed="0.001000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2024-07-11T13:25:57.500189" elapsed="0.000000"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.89")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.491189" elapsed="0.010000"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.572043" level="INFO">${title_text} = Clarivate</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.501189" elapsed="0.070854"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.572043" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.574040" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.572043" elapsed="0.001997"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.90")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.501189" elapsed="0.072851"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.583040" level="INFO">${title_text} = Clarivate</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.574040" elapsed="0.009000"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.584100" elapsed="0.000635"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.585737" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.584735" elapsed="0.001002"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.91")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.574040" elapsed="0.011697"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.593739" level="INFO">${title_text} = Clarivate Analytics</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.586736" elapsed="0.007003"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.593739" elapsed="0.001000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.595736" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.594739" elapsed="0.000997"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.92")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.585737" elapsed="0.009999"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.679166" level="INFO">${title_text} = Clarivate (@Clarivate) · X</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.596738" elapsed="0.082428"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.680167" elapsed="0.001000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.683166" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.681167" elapsed="0.001999"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.93")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.596738" elapsed="0.086428"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.703036" level="INFO">${title_text} = Clarivate Analytics</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.683166" elapsed="0.019870"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.703036" elapsed="0.001000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.706035" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.704036" elapsed="0.001999"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.94")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.683166" elapsed="0.022869"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.720284" level="INFO">${title_text} = Clarivate</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.706035" elapsed="0.014249"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.720284" elapsed="0.001001"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.723284" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.721285" elapsed="0.001999"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.95")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.706035" elapsed="0.017249"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:25:57.775886" level="INFO">${title_text} = Description</msg>
+<var>${title_text}</var>
+<arg>${title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.723284" elapsed="0.053611"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>'${title_text}' == '${EMPTY}'</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.776895" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-07-11T13:25:57.778883" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt"&gt;C:\Users\zmokser\Downloads\selenium_project\test\results\result_titles.txt&lt;/a&gt;'.</msg>
+<arg>${TITLES_FILE}</arg>
+<arg>${title_text}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.776895" elapsed="0.001988"/>
+</kw>
+<var name="${title}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7e44e2732b9109dbfaf8ce5372c1877b", element="f.ABC8C17C477F06AE15239EB73F69ACC7.d.C7BEFE5653C5B434F4B33E63BAE2163E.e.96")&gt;</var>
+<status status="PASS" start="2024-07-11T13:25:57.723284" elapsed="0.055599"/>
+</iter>
+<var>${title}</var>
+<value>@{titles}</value>
+<status status="PASS" start="2024-07-11T13:25:57.160720" elapsed="0.618163"/>
+</for>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-11T13:25:57.779882" elapsed="2.260594"/>
+</kw>
+<doc>This test case checks the clarivate result page and captures the result titles
+into a text file.
+- Navigate to www.google.com
+- Search for 'Clarivate Analytics'
+- Capture the title of all results of first page to a text file</doc>
+<tag>scenario1</tag>
+<status status="PASS" start="2024-07-11T13:25:47.047697" elapsed="12.992779"/>
+</test>
+<test id="s1-t2" name="Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Total Job Count On Webpage Result" line="55">
+<kw name="Verify Google Search Results">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:00.040476" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/?hl=en'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T13:26:00.040476" elapsed="3.321294"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.361770" elapsed="0.062922"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[@id="S3BnEe"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.424692" elapsed="0.025393"/>
+</kw>
+<msg time="2024-07-11T13:26:03.451085" level="INFO">${google_popup_status} = True</msg>
+<var>${google_popup_status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://*[@id="S3BnEe"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.424692" elapsed="0.026393"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:03.451085" level="INFO">Clicking element 'xpath://*[@id="L2AGLb"]/div'.</msg>
+<arg>xpath://*[@id="L2AGLb"]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.451085" elapsed="0.077722"/>
+</kw>
+<arg>${google_popup_status}</arg>
+<arg>Click Element</arg>
+<arg>xpath://*[@id="L2AGLb"]/div</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.451085" elapsed="0.077722"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://img[@alt='Google']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.528807" elapsed="0.024125"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:03.552932" level="INFO">Typing text 'Clarivate Analytics' into text field 'name:q'.</msg>
+<arg>name:q</arg>
+<arg>Clarivate Analytics</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.552932" elapsed="0.147546"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:btnK</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.701476" elapsed="0.232032"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:03.933508" level="INFO">Clicking element 'name:btnK'.</msg>
+<arg>name:btnK</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:03.933508" elapsed="0.127978"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:04.915180" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-11T13:26:04.916151" level="FAIL">Title should have been 'Clarivate Analytics - Google Search' but was ''.</msg>
+<arg>Clarivate Analytics - Google Search</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="FAIL" start="2024-07-11T13:26:04.062481" elapsed="0.856672">Title should have been 'Clarivate Analytics - Google Search' but was ''.</status>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:05.919580" level="INFO">Page title is 'Clarivate Analytics - Google Search'.</msg>
+<arg>Clarivate Analytics - Google Search</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-07-11T13:26:05.919580" elapsed="0.000000"/>
+</kw>
+<arg>5sec</arg>
+<arg>1sec</arg>
+<arg>Title Should Be</arg>
+<arg>Clarivate Analytics - Google Search</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-07-11T13:26:04.062481" elapsed="1.857099"/>
+</kw>
+<doc>Verify google search results is success.</doc>
+<status status="PASS" start="2024-07-11T13:26:00.040476" elapsed="5.879104"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:05.919580" level="INFO">Clicking link 'xpath://a[@href='https://clarivate.com/']'.</msg>
+<arg>xpath://a[@href='https://clarivate.com/']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:05.919580" elapsed="2.389148"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:onetrust-pc-btn-handler</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:08.328319" elapsed="0.183998"/>
+</kw>
+<msg time="2024-07-11T13:26:08.513318" level="INFO">${accept_cookies} = True</msg>
+<var>${accept_cookies}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id:onetrust-pc-btn-handler</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-11T13:26:08.328319" elapsed="0.184999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:08.532068" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
+<arg>id:onetrust-accept-btn-handler</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:08.532068" elapsed="0.168065"/>
+</kw>
+<arg>${accept_cookies}</arg>
+<arg>Click Button</arg>
+<arg>id:onetrust-accept-btn-handler</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:26:08.532068" elapsed="0.168065"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[@id="menu-item-13"]/a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:08.894651" elapsed="0.329353"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:09.224004" level="INFO">Clicking link 'xpath://*[@id="menu-item-13"]/a'.</msg>
+<arg>xpath://*[@id="menu-item-13"]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:09.224004" elapsed="0.210423"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>New</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:09.435425" elapsed="0.101862"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@aria-label='cookie']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:09.537880" elapsed="1.817221"/>
+</kw>
+<msg time="2024-07-11T13:26:11.355101" level="INFO">${cookies_message} = True</msg>
+<var>${cookies_message}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://div[@aria-label='cookie']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-11T13:26:09.537880" elapsed="1.817221"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:11.357098" level="INFO">Clicking button 'xpath://button[normalize-space()='Allow']'.</msg>
+<arg>xpath://button[normalize-space()='Allow']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:11.357098" elapsed="0.091466"/>
+</kw>
+<arg>${cookies_message}</arg>
+<arg>Click Button</arg>
+<arg>xpath://button[normalize-space()='Allow']</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:26:11.357098" elapsed="0.091466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[@id="typehead"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:11.449564" elapsed="0.024696"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:11.475383" level="INFO">Clicking button 'id:ph-search-backdrop'.</msg>
+<arg>id:ph-search-backdrop</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:11.474260" elapsed="0.917788"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://span[normalize-space()='Category']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:12.393050" elapsed="0.991444"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:13.384494" level="INFO">Clicking element 'xpath://span[normalize-space()='Category']'.</msg>
+<arg>xpath://span[normalize-space()='Category']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:13.384494" elapsed="0.220731"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:13.606226" level="INFO">Selecting checkbox 'xpath://input[@data-ph-at-text='Technology']'.</msg>
+<arg>xpath://input[@data-ph-at-text='Technology']</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:13.606226" elapsed="0.613834"/>
+</kw>
+<kw name="Scroll To Element">
+<kw name="Get Horizontal Position" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:14.258938" level="INFO">${x} = 102</msg>
+<var>${x}</var>
+<arg>${locator}</arg>
+<doc>Returns the horizontal position of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:14.220060" elapsed="0.038878"/>
+</kw>
+<kw name="Get Vertical Position" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:14.309001" level="INFO">${y} = 1369</msg>
+<var>${y}</var>
+<arg>${locator}</arg>
+<doc>Returns the vertical position of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:14.258938" elapsed="0.050063"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:14.310001" level="INFO">Executing JavaScript:
+window.scrollTo(102, 1369)
+Without any arguments.</msg>
+<arg>window.scrollTo(${x}, ${y})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-07-11T13:26:14.309001" elapsed="0.032000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T13:26:16.341146" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T13:26:14.341001" elapsed="2.000145"/>
+</kw>
+<arg>xpath://span[normalize-space()='City']</arg>
+<doc>Get the positions to scroll to elements.
+Arguments:
+- locator: input the element locator</doc>
+<status status="PASS" start="2024-07-11T13:26:14.220060" elapsed="2.121086"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://span[normalize-space()='City']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T13:26:16.343086" elapsed="0.028002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:16.373081" level="INFO">Clicking element 'xpath://span[normalize-space()='City']'.</msg>
+<arg>xpath://span[normalize-space()='City']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:16.373081" elapsed="0.097005"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:16.472088" level="INFO">Selecting checkbox 'xpath://input[@data-ph-at-text='Bangalore']'.</msg>
+<arg>xpath://input[@data-ph-at-text='Bangalore']</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:16.471084" elapsed="0.292010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T13:26:18.766055" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T13:26:16.765093" elapsed="2.000962"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:18.793538" level="INFO">${get_job_count_from_search_filter} = 2</msg>
+<var>${get_job_count_from_search_filter}</var>
+<arg>xpath://input[@data-ph-at-text='Bangalore']</arg>
+<arg>data-ph-at-count</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.767004" elapsed="0.026534"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total job count from search filter for Bangalore(_) ${get_job_count_from_search_filter}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.795540" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T13:26:18.834541" level="INFO">${page_top_job_count} = 2</msg>
+<var>${page_top_job_count}</var>
+<arg>xpath://span[@data-ph-at-id='search-page-top-job-count']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.797539" elapsed="0.037002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total job count from right side of the results ${page_top_job_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.836542" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${get_job_count_from_search_filter}</arg>
+<arg>${page_top_job_count}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.838645" elapsed="0.000000"/>
+</kw>
+<msg time="2024-07-11T13:26:18.839542" level="INFO">${count_match} = True</msg>
+<var>${count_match}</var>
+<arg>Should Be Equal</arg>
+<arg>${get_job_count_from_search_filter}</arg>
+<arg>${page_top_job_count}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.838645" elapsed="0.000897"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Both the job count values are matching successfully ${get_job_count_from_search_filter}==${page_top_job_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.840540" elapsed="0.000000"/>
+</kw>
+<arg>${count_match}</arg>
+<arg>Log To Console</arg>
+<arg>Both the job count values are matching successfully ${get_job_count_from_search_filter}==${page_top_job_count}</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Both the job count values are mismatched ${get_job_count_from_search_filter}!=${page_top_job_count}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.839542" elapsed="0.000998"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-11T13:26:18.841540" elapsed="6.476543"/>
+</kw>
+<doc>This test case checks the clarivate careers page and compares the job count
+between checkbox filter city(count) count to page resulted total job count to be same.
+- Open from goolge results https://clarivate.com
+- Accept cookies if any
+- Filter on basis of checkbox 'Category=Technology(count)' and 'City='Bangalore(count)'
+- Now check total job count on page == checkbox filter showing count for 'City='Bangalore(count)'</doc>
+<tag>scenario2</tag>
+<status status="PASS" start="2024-07-11T13:26:00.040476" elapsed="25.277607"/>
+</test>
+<status status="PASS" start="2024-07-11T13:25:46.703519" elapsed="38.614564"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">scenario1</stat>
+<stat pass="1" fail="0" skip="0">scenario2</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Verify Titles And Job Counts">Verify Titles And Job Counts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
