@@ -111,6 +111,7 @@ tasks
    ```
 5. Now start running the test cases by providing USERNAME and TOKEN on CLI
    ```bash
+   rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_1 (main)
    $ k6 run -e TOKEN=<your_generated_token_from_github> -e USERNAME=<github_username> main.js
    ```
    - --e : Here -e means the --env CLI flags, the environment variables are exposed through a global __ENV variable, that can be used while running the k6 file
@@ -220,5 +221,8 @@ tasks
 
       ```
     7. A result.html file will be created it the same location, you can open the file in browser and check different checks and thersholds and time durations
+       - In below image you will see different thershold points and here 4 requests are failed because its part of negative error input scenarios that we are running and all the test cases scenarios have passed.
+       ![image](https://github.com/sereen-786/tasks/assets/82365795/a641a611-d1c3-4b07-9ba0-dc05011d7913)
        
+
 
