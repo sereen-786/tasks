@@ -92,6 +92,7 @@ pip install robotframework-seleniumlibrary
 ## 5. Execution of test cases
 
 1. Open the git bash or cmd promt
+
 2. Create a folder and clone the repo or download the repo
 ```bash
 rithi@Workstation MINGW64 ~/dummy_test
@@ -110,7 +111,7 @@ rithi@Workstation MINGW64 ~/dummy_test
 $ ls
 tasks/
 ```
-4. Go into the Tast_2 folder
+4. Go into the Tast_2/test folder to run test suite
 ```bash
 rithi@Workstation MINGW64 ~/dummy_test
 $ cd tasks/Task_2/test
