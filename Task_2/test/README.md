@@ -73,10 +73,10 @@ Just run the pip command to install:
 pip install robotframework-seleniumlibrary
 ```
 
-### 4.4 Download Web driver
-[Chrome](https://chromedriver.chromium.org/downloads)
-[Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)   --> you can also place it in the C:/Windows/System32
-[Firefox](https://github.com/mozilla/geckodriver/releases)
+### 4.4 Download Web driver on Windows
+- [Chrome](https://chromedriver.chromium.org/downloads)
+- [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)   --> you can also place it in the C:/Windows/System32
+- [Firefox](https://github.com/mozilla/geckodriver/releases)
 
 1. Download any driver like Chromedriver.exe from its official website, extract the .exe file and copy this .exe file in scripts folder of Python installation, e.g. C:\Python36\Scripts (We will need to save driver in the location C:\Users\befor\AppData\Local\Programs\Python\Python36\Scripts)
 
@@ -84,8 +84,8 @@ pip install robotframework-seleniumlibrary
 ![image](https://github.com/sereen-786/tasks/assets/82365795/d903f9de-654c-4505-b5b7-f67f8b98479d)
 
 ### 4.3 PyCharm Installation (optional)
-[for Mac](https://medium.com/@saileshRamesh/robot-framework-python-setup-guide-mac-b5e57c3ba9f9)
-[for Windows](https://medium.com/geekculture/how-to-setup-robot-framework-for-test-automation-on-windows-2a9cc0da0763)
+1. To install on Mac [for Mac](https://medium.com/@saileshRamesh/robot-framework-python-setup-guide-mac-b5e57c3ba9f9)
+2. To install on Windows [for Windows](https://medium.com/geekculture/how-to-setup-robot-framework-for-test-automation-on-windows-2a9cc0da0763)
 
 
 
