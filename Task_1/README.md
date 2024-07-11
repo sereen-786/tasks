@@ -228,11 +228,11 @@ tasks
    ```bash
    rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_1 (main)
    $ ls
-   README.md  common/  main.js  result.html  tests/          --> new file created
+   README.md  common/  main.js  result.html  tests/          --> new file result.html created after running
    ```
 
-9. A result.html file will be created it the same location, you can open the file in browser and check different checks and thersholds and time durations
-   - In below image you will see different thershold points and here 4 requests are failed because its part of negative error input scenarios that we are running and all the test cases scenarios have passed.
+9. A result.html file will be created in the current running location, you can open the file in browser and check different checks and thersholds and time durations
+   - In below image you will see different thershold points and here 4 requests are failed because its part of negative error input scenarios which is the expected behaviour that we are running and all the test cases scenarios have passed.
        ![image](https://github.com/sereen-786/tasks/assets/82365795/a641a611-d1c3-4b07-9ba0-dc05011d7913)
        
 
