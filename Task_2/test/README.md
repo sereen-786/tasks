@@ -1,3 +1,11 @@
+## Content
+
+1. About Task
+2. Robot Framework and SeleniumLibrary
+3. Download pretrained weights
+4. Installation of softwares for execution of test cases
+5. Execution of test cases
+  
 ## 1. About Task
 
 This project covers two scenarios for front end automation written using [Robot Framework](http://robotframework.org) and [Selenium Library](https://github.com/robotframework/SeleniumLibrary)
