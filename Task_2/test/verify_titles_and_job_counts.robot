@@ -6,7 +6,7 @@ Test Teardown   Close All Browsers
 
 *** Variables ***
 ${URL}          https://www.google.com/?hl=en
-${TITLES_FILE}  ./results/result_titles.txt
+${TITLES_FILE}  ./results/result_titles.txt         # Results file to store all the google search result titles of first page
 ${BROWSER}      Chrome
 
 
