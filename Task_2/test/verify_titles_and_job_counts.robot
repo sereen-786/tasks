@@ -1,13 +1,14 @@
+# Setting section
 *** Settings ***
-Library         SeleniumLibrary
-Library         OperatingSystem
+Library                    SeleniumLibrary
+Library                   OperatingSystem
 Test Teardown   Close All Browsers
 
 
 *** Variables ***
-${URL}          https://www.google.com/?hl=en
-${TITLES_FILE}  ./results/result_titles.txt         # Results file to store all the google search result titles of first page
-${BROWSER}      Chrome
+${URL}                       https://www.google.com/?hl=en
+${TITLES_FILE}       ./results/result_titles.txt         # Results file to store all the google search result titles of first page
+${BROWSER}          Chrome
 
 
 *** Keywords ***
@@ -61,9 +62,12 @@ Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Tota
     ...              - Now check total job count on page == checkbox filter showing count for 'City='Bangalore(count)'
     [Tags]  scenario2 
     Verify Google Search Results
-    Click Link  xpath://a[@href='https://clarivate.com/']
-    ${accept_cookies}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-pc-btn-handler
-    Run Keyword If  ${accept_cookies}  Click Button  id:onetrust-accept-btn-handler      # Accept cookies if any
+    Click Link  xpath://a[@href='https://clarivate.com/']        # Click on the link 'https://clarivate.com/' from google results
+    ${cookies_popup}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-pc-btn-handler
+    ${accept_button}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-accept-btn-handler
+    ${cancel button}   Run Keyword And Return Status  Wait Until Element Is Visible   xpath://*[@id="onetrust-close-btn-container"]/button
+    Run Keywords  Run Keyword If   '${cookies_popup}' == '${accept_button}'   Click Button  id:onetrust-accept-btn-handler     # Accept cookies if any
+    ...  AND  Run Keyword If   '${cookies_popup}' == '${cancel_button}'   Click Button  xpath://*[@id="onetrust-close-btn-container"]/button        # If no accept is found then cancel it
     Wait Until Element Is Visible  xpath://*[@id="menu-item-13"]/a     # Check if the careers option is available
     Click Link  xpath://*[@id="menu-item-13"]/a                  # Hit on the careers option
     Switch Window  New                           # Opens a new tab so switch to it
