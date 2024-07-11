@@ -82,6 +82,7 @@ pip install robotframework-seleniumlibrary
 
 2. After this, add this scripts path in Environment variable, as below:
 ![image](https://github.com/sereen-786/tasks/assets/82365795/d903f9de-654c-4505-b5b7-f67f8b98479d)
+For more info see [Link](https://www.selenium.dev/selenium/docs/api/py/index.html#drivers)
 
 ### 4.3 PyCharm Installation (optional)
 1. To install on Mac [for Mac](https://medium.com/@saileshRamesh/robot-framework-python-setup-guide-mac-b5e57c3ba9f9)
