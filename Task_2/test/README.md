@@ -1,10 +1,10 @@
-# Task_1
+# Task 1 Front End Automation
 
 ## Contents
 
 1. About Task
 2. Robot Framework and SeleniumLibrary
-3. Download pretrained weights
+3. Download pretrained weights and file structure
 4. Installation of softwares for execution of test cases
 5. Execution of test cases
   
@@ -38,13 +38,13 @@ Or, download all pretrained weights from [tasks repo download](https://github.co
 ```text
 tasks
 └── Task_1
-    └── test
-        ├── verify_titles_and_job_counts.robot
-        └── results
+    └── test                                      --> test folder
+        ├── verify_titles_and_job_counts.robot    --> file containing 2 scenarios
+        └── results                               --> results folder to store results after running
             ├── log.html
-            ├── output.xml
+            ├── output.xml                        
             ├── report.html
-            └── results_titles.txt
+            └── results_titles.txt                --> txt file for storing the titles of web page search
 ```
 ## 4. Installation
 ### 4.1 Install Python
@@ -149,7 +149,8 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
-$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot          ---> with passing variable for chrome browser to run on
+$ robot --variable BROWSER:Chrome --variable TITLES_FILE:./results/result_titles.txt --outputdir results/ verify_titles_and_job_counts.robot           
+                                                                                                       ---> with passing variable for chrome browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -169,8 +170,9 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 
-rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                       
-$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> with passing variable for edge browser to run on
+rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                                            
+$ robot --variable BROWSER:Edge --variable TITLES_FILE:./results/result_titles.txt --outputdir results/ verify_titles_and_job_counts.robo
+                                                                                                            ---> with passing variable for edge browser to run on  
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -189,8 +191,8 @@ Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
 Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 ```
 6. Check the reports in results folder containing output.xml, log.html, report.html for detailed code breaks, time of execution, pass or fail etc.
-7. Lets see what the command is all about:  robot --variable BROWSER:Chrome ---outputdir results/ verify_titles_and_job_counts.robot.
-   - --variable : Here you can pass any agrument values through CLI during the run, that is declared in test case file under *** Variables *** section. For example pass --variable BROWSER:Chrome or Edge or any other browser (Keep in mind to download and add the drivers into system env path)
+7. Lets see what the command is all about:  robot --variable BROWSER:Chrome --variable TITLES_FILE:./results/result_titles.txt ---outputdir results/ verify_titles_and_job_counts.robot.
+   - --variable : Here you can pass any agrument values through CLI during the run, that is declared in test case file under *** Variables *** section. For example pass --variable BROWSER:Chrome or Edge or any other browser (Keep in mind to download and add the drivers into system env path) and --variable TITLES_FILE:./results/result_titles.txt -- to store titles of web page results of the scenario1 in text file
    - --outputdir : Its the path to store all the results after run.
 8. We can run single test cases from the file using --include or -i where the tag values are given from test case [tags] section
    - robot --outputdir results/ -i scenario1 verify_titles_and_job_counts.robot --> runs only the first tc from the test case file 'verify_titles_and_job_count.robot
