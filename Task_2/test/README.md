@@ -38,8 +38,11 @@ tasks
 ```
 ### 4. Installation
 #### 4.1 Install Python
-1. Visit the official download page of python. (Link)
-2. Download the latest version for Windows or mac or linux
+To install on Mac refer this link [python on mac](https://phoenixnap.com/kb/install-python-mac)
+
+To install on Windows refer link [python on windows](https://phoenixnap.com/kb/how-to-install-python-3-windows)
+1. Visit the official download page of python. [Link](https://www.python.org/downloads/windows/)
+2. Download the latest version for Windows.
 3. Run the downloaded executable file. The Python setup modal should appear. Tick the Add python.exe to PATH to automatically include python to PATH.
     ![image](https://github.com/sereen-786/tasks/assets/82365795/2a5eeb63-f40d-4fbc-bf3c-1844407e428f)
 4. Click Install Now and follow the instructions prompted by python setup modal. Python will usually be installed in C:\Users\<Username>\AppData\Local\Programs\Python\<Python Version>. In case you forgot to tick the Add python.exe to PATH, be sure to manually add this to your environment variable PATH.
@@ -53,6 +56,8 @@ tasks
 9. ```bash
    python --version
    ```
+
+#### 4.2 Install Robot Framework
 
 
 
