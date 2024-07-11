@@ -118,7 +118,7 @@ $ cd tasks/Task_2/test
 ```
 5. Now run the below command to run the test cases and check the execution
 ```bash
-$ robot --outputdir results/ verify_titles_and_job_counts.robot
+$ robot --outputdir results/ verify_titles_and_job_counts.robot                      ---> without passing variable
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -136,8 +136,10 @@ Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
 Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
 Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
+
+
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
-$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot
+$ robot --variable BROWSER:Chrome --outputdir results/ verify_titles_and_job_counts.robot          ---> without passing variable for chrome browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
@@ -155,8 +157,10 @@ Output:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\output.xml
 Log:     C:\Users\rithi\dummy_test\tasks\Task_2\test\results\log.html
 Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
-rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)
-$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot
+
+
+rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                       
+$ robot --variable BROWSER:Edge --outputdir results/ verify_titles_and_job_counts.robot            ---> without passing variable for chrome browser to run on
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
