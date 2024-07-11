@@ -5,17 +5,18 @@
 1. About Task
 2. About K6 automation tool
 3. Download pretrained weights and file structure
-4. Installation of k6 for execution of test cases
-5. Execution steps
+4. Github account and token creation -- needed for running test cases
+5. Installation of k6 for execution of test cases
+6. Execution steps
 
 
-## About Task
+## 1. About Task
 
-Select any publicly available API (ex: OpenWeatherMap API or GitHub API), identify and
+Select any publicly available API  GitHub API, identify and
 automate three critical scenarios. Provide documentation for each of the automated
 scenario.
 
-## About K6 automation tool
+## 2. About K6 automation tool
 Grafana k6 is an open-source load testing tool that makes performance testing easy and productive for engineering teams. k6 is free, developer-centric, and extensible.
 Using k6, you can test the reliability and performance of your systems and catch performance regressions and problems earlier. k6 will help you to build resilient and performant applications that scale.
 
@@ -45,3 +46,11 @@ tasks
     │   └── userAuthWithDataValidation.js
     └── main.js
 ```
+## 4. Github account and token creation -- if doesnot exist
+1. To run these test/pass them or to access github api's you need to have a github account with - USERNAME and TOKEN
+2. Creation of account you can check link and proceed with the account creation [Github account creation](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account)
+3. If account is already present then skip the above 2 steps.
+4. Now generate the TOKEN to authenticate using github api to do operations.
+5. Check the steps here to generate TOKEN [Generate github token](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+   ![image](https://github.com/sereen-786/tasks/assets/82365795/f3238845-2fdd-46f6-8f68-21706b111e45)
+6. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
