@@ -54,24 +54,24 @@ tasks
 4. Now generate the TOKEN to authenticate using github api required for running test case.
 5. Check the steps here to generate TOKEN [Generate github token](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and follow this youtube link to create a token [Generate Token video](https://www.google.com/search?q=how+to+generate+token+in+github+youtube&sca_esv=3998ef5806fd06a1&rlz=1C1SQJL_enIN932IN932&sxsrf=ADLYWIJq-CZU59XnkKrUPgGKiAHA1f7hvQ%3A1720712224611&ei=IPyPZsD-JOmPseMPkLel6AQ&ved=0ahUKEwjAjqLHqJ-HAxXpR2wGHZBbCU0Q4dUDCA8&uact=5&oq=how+to+generate+token+in+github+youtube&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ2hvdyB0byBnZW5lcmF0ZSB0b2tlbiBpbiBnaXRodWIgeW91dHViZTIFECEYoAEyBRAhGKABMgUQIRifBUiCG1CZAli9GHABeAGQAQCYAZQCoAHjD6oBAzItOLgBA8gBAPgBAZgCCaACqhDCAgoQABiwAxjWBBhHwgIFEAAYgATCAgYQABgWGB7CAggQABgWGAoYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgcQIRigARgKwgIEECEYFZgDAIgGAZAGCJIHBTEuMC44oAe3KA&sclient=gws-wiz-serp#fpstate=ive&vld=cid:a06ab2f2,vid:FugonDV6RdE,st:39)
 
+6. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
+
    ![image](https://github.com/sereen-786/tasks/assets/82365795/13da32a7-e457-4a2b-a8c1-dcb313643d4d)
 
-   
-7. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
 
 ## 5. Installation of K6 tool
 
 1. On Windows
 
-- If you use the Windows Package Manager, install the official packages from the k6 manifests (created by the community):
-  ```bash
-  winget install k6 --source winget
-  ```
-- If you use the Chocolatey package manager you can install the unofficial k6 package with:
-  ```bash
-  choco install k6
-  ```
-- Alternatively, you can download and run the [latest official installer](https://dl.k6.io/msi/k6-latest-amd64.msi).
+   - If you use the Windows Package Manager, install the official packages from the k6 manifests (created by the community):
+    ```bash
+    winget install k6 --source winget
+    ```
+  - If you use the Chocolatey package manager you can install the unofficial k6 package with:
+    ```bash
+    choco install k6
+    ```
+  - Alternatively, you can download and run the [latest official installer](https://dl.k6.io/msi/k6-latest-amd64.msi).
 
 2. Similarlly, check for mac and linux installation here [Mac and Linux installation here](https://k6.io/docs/get-started/installation/#linux)
 
