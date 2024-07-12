@@ -1,5 +1,5 @@
 // To run ll scenarios run this main.js file
-// To run ---> k6 run TOKEN:<add_your_github_token_here> -e USERNAME:<add_your_github_usernme_here> main.js
+// To run ---> k6 run -e TOKEN:<add_your_github_token_here> -e USERNAME:<add_your_github_usernme_here> main.js
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 import { group } from 'k6';
