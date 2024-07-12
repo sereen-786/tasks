@@ -59,7 +59,7 @@ export function userAuthwithDataValidation () {
 }
 
 // If alone this file want to be executed then this default function is required
-// To run ---> k6 run TOKEN:<add_your_github_token_here> -e USERNAME:<add_your_github_usernme_here> userAuthWithDataValidation.js
+// To run ---> k6 run -e TOKEN:<add_your_github_token_here> -e USERNAME:<add_your_github_usernme_here> userAuthWithDataValidation.js
 export default function() {
     userAuthwithDataValidation();
 }
