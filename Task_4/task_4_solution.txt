@@ -1,0 +1,56 @@
+Task 4:
+
+The forgotten password function is about to be enhanced so users cannot use the same password more than a configured value. They will also be able to enter a forgotten password prompt question/answer if they wish to add one to their account. What questions you would ask the business analyst to ensure requirements are met?
+
+
+As a QA I would consider asking below questions:
+
+
+Questions About Password History:
+
+
+1. What is the configured value for the maximum number of previous passwords that cannot be reused?
+
+2. Is there a time frame for which the password history should be considered e.g, last 6 months, last 10 passwords?
+
+3. Are there any specific password complexity requirements e.g, length, special characters, upper/lowercase letters, numbers?
+
+4. How will users be informed if they attempt to reuse a password that is not allowed?
+
+5. Will there be any error messages provided to users if they choose a password that was previously used?
+
+
+Questions About Forgotten Password Prompt:
+
+
+6. What are the criteria for the forgotten password prompt questions? Are there predefined questions, or can users create their own?
+
+7. Is there a minimum or maximum length for the question and answer?
+
+8. Can users change their security question and answer after setting them? If so, what is the process?
+
+9. What validations needed for the forgotten password prompt question and answer?
+
+10. How the system will handle incorrect answers to the forgotten password prompt?
+
+11. Is there a limit to the number of attempts a user can make to answer the forgotten password prompt? What happens after the limit is reached?
+
+
+Questions About UI testing:
+
+
+12. Where in the UI will the option to set or change the forgotten password prompt question and answer be located?
+
+13. What are the pop-ups or error messages on UI while setting or updating their forgotten password prompt question and answer?
+
+
+Questions About Testing:
+
+
+14. What types of tests should be conducted to validate this enhancement (e.g., unit tests, integration tests)?
+
+15. Are there any specific/important test cases or scenarios that need to be covered?
+
+16. How will we verify that the password history check is working correctly?
+
+
