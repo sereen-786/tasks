@@ -90,4 +90,4 @@ Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Tota
     ${count_match}  Run Keyword And Return Status  Should Be Equal  ${get_job_count_from_search_filter}  ${page_top_job_count}
     # To check here if the 'Bangalore(count)' == page total job result count
     Run Keyword If  ${count_match}  Log To Console  Both the job count values are matching successfully ${get_job_count_from_search_filter}==${page_top_job_count}
-    ...  ELSE  Log To Console  Both the job count values are mismatched ${get_job_count_from_search_filter}!=${page_top_job_count}
+    ...  ELSE  Fail  Both the job count values are mismatched ${get_job_count_from_search_filter}!=${page_top_job_count}
