@@ -4,7 +4,7 @@
 
 1. About Task
 2. Robot Framework and SeleniumLibrary
-3. Download pretrained weights and file structure
+3. Code file structure and downloading repo
 4. Installation of softwares for execution of test cases
 5. Execution of test cases
   
@@ -27,14 +27,14 @@ Robot Framework is operating system and application independent. It is implement
 
 [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary) is a web testing library for [Robot Framework](http://robotframework.org) that utilizes the [Selenium](https://www.seleniumhq.org/) tool internally. The project is hosted on [GitHub](https://github.com/robotframework/SeleniumLibrary) and downloads can be found from [PyPI](https://pypi.org/project/robotframework-seleniumlibrary/) SeleniumLibrary currently works with Selenium 4. It supports Python 3.8 through 3.11. In addition to the normal [Python](https://www.python.org/) interpreter, it works also with [PyPI](https://pypi.org/project/robotframework-seleniumlibrary/).
 
-## 3. Download pretrained weights
+## 3. Code file structure and downloading repo
 
 ```bash
 # you may need to run git instaled first
 git clone https://github.com/sereen-786/tasks.git
 ```
 
-Or, download all pretrained weights from [tasks repo download](https://github.com/sereen-786/tasks/archive/refs/heads/main.zip)
+Or, download it from [tasks repo download](https://github.com/sereen-786/tasks/archive/refs/heads/main.zip)
 ```text
 tasks
 └── Task_1
@@ -94,7 +94,7 @@ pip install robotframework-seleniumlibrary
 ![image](https://github.com/sereen-786/tasks/assets/82365795/d903f9de-654c-4505-b5b7-f67f8b98479d)
 - For more info see [Link](https://www.selenium.dev/selenium/docs/api/py/index.html#drivers)
 
-### 4.3 PyCharm Installation (optional)
+### 4.5 PyCharm Installation (optional)
 1. To install on Mac [for Mac](https://medium.com/@saileshRamesh/robot-framework-python-setup-guide-mac-b5e57c3ba9f9)
 2. To install on Windows [for Windows](https://medium.com/geekculture/how-to-setup-robot-framework-for-test-automation-on-windows-2a9cc0da0763)
 
@@ -171,7 +171,8 @@ Report:  C:\Users\rithi\dummy_test\tasks\Task_2\test\results\report.html
 
 
 rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_2/test (main)                                            
-$ robot --variable BROWSER:Edge --variable TITLES_FILE:./results/result_titles.txt --outputdir results/ verify_titles_and_job_counts.robot                                                 ---> with passing variable for edge browser to run on  
+$ robot --variable BROWSER:Edge --variable TITLES_FILE:./results/result_titles.txt --outputdir results/ verify_titles_and_job_counts.robot
+                                                                               ---> with passing variable for edge browser to run on  
 ==============================================================================
 Verify Titles And Job Counts
 ==============================================================================
