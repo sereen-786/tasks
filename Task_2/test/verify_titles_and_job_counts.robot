@@ -16,13 +16,13 @@ Verify Google Search Results
     [Documentation]  Verify google search results is success.
     Open Browser  ${URL}  ${BROWSER}
     Maximize Browser Window
-    ${google_popup_status}  Run Keyword And Return Status  Wait Until Element Is Visible  xpath://*[@id="S3BnEe"]
-    Run Keyword If  ${google_popup_status}  Click Element  xpath://*[@id="L2AGLb"]/div     # If google pop up appears then click element to 'Accept All'
+    ${google_popup_status}  Run Keyword And Return Status  Wait Until Element Is Visible  xpath://*[@id="S3BnEe"]       # Check if google pop up to accept is appeared
+    Run Keyword If  ${google_popup_status}  Click Element  xpath://*[@id="L2AGLb"]/div     # If so google pop up appears then click element to 'Accept All'
     Wait Until Element Is Visible  xpath://img[@alt='Google']
     Input Text  name:q  Clarivate Analytics      # Input google search box 'Clarivate Analytics'
     Wait Until Element Is Visible  name:btnK
     Click Element   name:btnK     # Hit search button
-    Wait Until Keyword Succeeds  5sec  1sec  Title Should Be  Clarivate Analytics - Google Search
+    Wait Until Keyword Succeeds  5sec  1sec  Title Should Be  Clarivate Analytics - Google Search       # Verify till the page shows all the results
 
 Scroll To Element
     [Documentation]  Get the positions to scroll to elements.
@@ -43,15 +43,18 @@ Scenario 1: Verify And Capture Titles Of All Search Results From Clarivate First
     ...              - Search for 'Clarivate Analytics'
     ...              - Capture the title of all results of first page to a text file
     [Tags]   scenario1
-    [Setup]  Remove File  ${TITLES_FILE} 
-    Verify Google Search Results
-    ${titles}  Get Webelements   xpath://h3
+    Remove File  ${TITLES_FILE}               # Removes and confirms the ./results/result_titles.txt file in the start to ensure the test is doing its job
+    File Should Not Exist  ${TITLES_FILE}             
+    Verify Google Search Results                              # Google search with 'Clarivate Analytics' 
+    ${titles}  Get Webelements   xpath://h3                   # //h3 tag provides all the result headings(titles)
     Should Not Be Empty   ${titles}
     FOR  ${title}  IN  @{titles}
         ${title_text}  Get Text   ${title}
         Continue For Loop if  '${title_text}' == '${EMPTY}'
-        Append To File  ${TITLES_FILE}  ${title_text}\n
+        Append To File  ${TITLES_FILE}  ${title_text}\n          # Append file creats a file if it doesnot exists and appends one by one data into the file
     END
+    File Should Exist  ${TITLES_FILE}                      # Check in the dir ./results/result_titles.txt the new file should be created with data in it
+    File Should Not Be Empty  ${TITLES_FILE}  msg=Unexpected error: file is empty with no titles text added
 
 Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Total Job Count On Webpage Result
     [Documentation]  This test case checks the clarivate careers page and compares the job count
@@ -61,8 +64,8 @@ Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Tota
     ...              - Filter on basis of checkbox 'Category=Technology(count)' and 'City='Bangalore(count)'
     ...              - Now check total job count on page == checkbox filter showing count for 'City='Bangalore(count)'
     [Tags]  scenario2 
-    Verify Google Search Results
-    Click Link  xpath://a[@href='https://clarivate.com/']        # Click on the link 'https://clarivate.com/' from google results
+    Verify Google Search Results                         # Google search with 'Clarivate Analytics' 
+    Click element  xpath://a[@href='https://clarivate.com/']//div[@class='notranslate HGLrXd NJjxre iUh30 ojE3Fb']        # Click on the link 'https://clarivate.com/' from google results
     ${cookies_popup}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-pc-btn-handler
     ${accept_button}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-accept-btn-handler
     ${cancel button}   Run Keyword And Return Status  Wait Until Element Is Visible   xpath://*[@id="onetrust-close-btn-container"]/button
