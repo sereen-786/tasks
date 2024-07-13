@@ -34,7 +34,7 @@ for more info please check their office website [K6 official](https://k6.io/docs
 git clone https://github.com/sereen-786/tasks.git
 ```
 
-Or, download it from [tasks repo download](https://github.com/sereen-786/tasks/archive/refs/heads/main.zip)
+Or, download it from [tasks repo download zip](https://github.com/sereen-786/tasks/archive/refs/heads/main.zip)
 ```text
 tasks
 └── Task_1
@@ -54,9 +54,10 @@ tasks
 4. Now generate the TOKEN to authenticate using github api required for running test case.
 5. Check the steps here to generate TOKEN [Generate github token](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and follow this youtube link to create a token [Generate Token video](https://www.google.com/search?q=how+to+generate+token+in+github+youtube&sca_esv=3998ef5806fd06a1&rlz=1C1SQJL_enIN932IN932&sxsrf=ADLYWIJq-CZU59XnkKrUPgGKiAHA1f7hvQ%3A1720712224611&ei=IPyPZsD-JOmPseMPkLel6AQ&ved=0ahUKEwjAjqLHqJ-HAxXpR2wGHZBbCU0Q4dUDCA8&uact=5&oq=how+to+generate+token+in+github+youtube&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ2hvdyB0byBnZW5lcmF0ZSB0b2tlbiBpbiBnaXRodWIgeW91dHViZTIFECEYoAEyBRAhGKABMgUQIRifBUiCG1CZAli9GHABeAGQAQCYAZQCoAHjD6oBAzItOLgBA8gBAPgBAZgCCaACqhDCAgoQABiwAxjWBBhHwgIFEAAYgATCAgYQABgWGB7CAggQABgWGAoYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAgcQIRigARgKwgIEECEYFZgDAIgGAZAGCJIHBTEuMC44oAe3KA&sclient=gws-wiz-serp#fpstate=ive&vld=cid:a06ab2f2,vid:FugonDV6RdE,st:39)
 
-6. Keep in mind to select repo, admin, delete repo access while generating the token
+6. Keep in mind to select repo, admin, delete repo access while generating the token.
 
-7. **Finally copy USERNAME and the generated TOKEN and use it while running test cases**
+7. **Finally copy github USERNAME and the generated TOKEN with you in some text file and use it while running test cases**
+   e.g, k6 run -e TOKEN=<your_generated_token_from_github> -e USERNAME=<github_username> main.js
 
    ![image](https://github.com/sereen-786/tasks/assets/82365795/13da32a7-e457-4a2b-a8c1-dcb313643d4d)
 
@@ -77,12 +78,15 @@ tasks
 
 2. Similarlly, check for mac and linux installation here [Mac and Linux installation here](https://k6.io/docs/get-started/installation/#linux)
 
-3. Check on git bash or cmd prompt if the k6 is installed successfully
+3. Open new git bash or cmd prompt and check if the k6 is installed successfully
    ```bash
    rithi@Workstation MINGW64 ~/dummy_test
    $ k6 --version
    k6.exe v0.52.0 (commit/20f8febb5b, go1.22.4, windows/amd64)
    ```
+4. If you do not see the output as from step 3, then check the system ENV path should be set with the k6 location
+   ![image](https://github.com/user-attachments/assets/0e0f0218-d9fd-4c4c-9f72-82724201931e)
+
    
 ## 6. Execution steps
 1. Open the git bash or cmd prompt
@@ -169,7 +173,7 @@ tasks
        █ Verify the github user authentication with data validation
 
          ✓ Authentication status is 200
-         ✓ Authenticated user name correct (login: Rithik-codes)
+         ✓ Authenticated user name correct (login: Sereen-786)
          ✓ Create repo status is 201
          ✓ Repo name created is correct (name: test-repo)
          ✓ Repo description is correct
@@ -230,7 +234,7 @@ tasks
    ```bash
    rithi@Workstation MINGW64 ~/dummy_test/tasks/Task_1 (main)
    $ ls
-   README.md  common/  main.js  result.html  tests/          --> new file result.html created after running
+   README.md  common/  main.js  result.html  tests/          --> new file result.html created after running step 6
    ```
 
 9. A result.html file will be created in the current running location, you can open the file in browser and check different checks and thersholds and time durations
