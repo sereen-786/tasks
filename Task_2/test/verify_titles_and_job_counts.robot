@@ -68,9 +68,10 @@ Scenario 2: Verify Filter Checkbox Job Count 'Bangalore(count)' Is Equal To Tota
     Click element  xpath://a[@href='https://clarivate.com/']//div[@class='notranslate HGLrXd NJjxre iUh30 ojE3Fb']        # Click on the link 'https://clarivate.com/' from google results
     ${cookies_popup}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-pc-btn-handler
     ${accept_button}  Run Keyword And Return Status  Wait Until Element Is Visible  id:onetrust-accept-btn-handler
-    ${cancel button}   Run Keyword And Return Status  Wait Until Element Is Visible   xpath://*[@id="onetrust-close-btn-container"]/button
-    Run Keywords  Run Keyword If   '${cookies_popup}' == '${accept_button}'   Click Button  id:onetrust-accept-btn-handler     # Accept cookies if any
-    ...  AND  Run Keyword If   '${cookies_popup}' == '${cancel_button}'   Click Button  xpath://*[@id="onetrust-close-btn-container"]/button        # If no accept is found then cancel it
+    ${cancel button}  Run Keyword And Return Status  Wait Until Element Is Visible  xpath://*[@id="onetrust-close-btn-container"]/button
+    Run Keywords  Run Keyword If  '${cookies_popup}' == '${accept_button}'  Click Button  id:onetrust-accept-btn-handler     # Accept cookies if any
+    ...  AND  Run Keyword If  '${cookies_popup}' == '${cancel_button}'  Click Button  xpath://*[@id="onetrust-close-btn-container"]/button        # If no accept is found then cancel it
+    Scroll To Element  xpath://*[@id="menu-item-13"]/a           # Scroll to careers option
     Wait Until Element Is Visible  xpath://*[@id="menu-item-13"]/a     # Check if the careers option is available
     Click Link  xpath://*[@id="menu-item-13"]/a                  # Hit on the careers option
     Switch Window  New                           # Opens a new tab so switch to it
